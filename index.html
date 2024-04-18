@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moon Mod Menu">
+    <title>Moon Reborn</title>
+    <style>
+        html,
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            padding: 0;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            background-color: rgba(17, 17, 17, 0.5);
+            transition: box-shadow 0.3s;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        }
+
+        .container-wrapper {
+            display: flex;
+            flex-wrap: wrap; 
+        }
+
+        .container2 {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            max-width: calc(50% - 40px);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            background-color: rgba(17, 17, 17, 0.5);
+            transition: box-shadow 0.3s;
+        }
+
+        .container2:hover {
+            box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        }
+
+        .container3 {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            max-width: calc(50% - 40px);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            background-color: rgba(17, 17, 17, 0.5);
+            transition: box-shadow 0.3s;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .container3:hover {
+            box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        }
+
+        .container3 iframe {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+
+        .container3 h1 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            margin: 0;
+            color: white;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            width: 300px;
+            height: auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .qa {
+            margin-top: 20px;
+        }
+
+        .qa h3 {
+            margin-bottom: 10px;
+        }
+
+        .qa dl {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .qa dt {
+            font-weight: bold;
+        }
+
+        .qa dt::after {
+            content: ":";
+        }
+
+        .price-tag {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .buy-button,
+        .other-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover,
+        .other-button:hover {
+            background-color: #0a4bc2;
+        }
+
+        .buy-button {
+            background-color: #3d4c52;
+        }
+
+        .other-button {
+            background-color: #2b2b2b;
+        }
+
+        .patch-notes {
+            background-color: #111111;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(1, 33, 75, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: "Courier New", monospace;
+        }
+
+        .patch-notes:hover {
+            transform: scale(1.005);
+            box-shadow: 0 0 10px rgba(47, 128, 237, 0.5);
+        }
+
+        .patch-table {
+            margin-top: 10px;
+        }
+
+        .patch-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .patch-table th, .patch-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #666;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container2 {
+                max-width: calc(100% - 40px);
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>TEMP: Moon Cracks</h1>
+
+        <a href="https://moonreborn.com/cracks" class="other-button" target="_blank">go</a>
+    </div>
+
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1>Moon Reborn</h1>
+
+        <img src="image.png" alt="Moon Reborn">
+        <h4>Introducing Moon Reborn, the ultimate Gorilla Tag mod menu tailored to deliver an array of innovative, undetectable, and exclusive features, elevating your gaming experience to new heights.</h4>
+        <div class="price-tag">$15 one-time.</div>
+        <div class="background-transition">
+            <a href="https://spezz.exchange/store/store/product/229-moon-reborn-mod-menu/" class="buy-button" target="_blank">Buy Now</a>
+        </div>
+        <a href="https://discord.gg/moonreborn" class="other-button" target="_blank">Discord Server</a>
+    </div>
+
+    <h1>Features</h1>
+
+    <div class="container-wrapper">
+        <div class="container2">
+            <h1>Unparalleled Quality</h1>
+            <h4>At Moon Mod Menu, we pride ourselves on consistently delivering unparalleled quality updates since 2021. Each update undergoes rigorous beta testing to guarantee the utmost excellence in our mod menu.</h4>
+        </div>
+        
+        <div class="container2">
+            <h1>Exceptional Customization</h1>
+            <h4>Discover the epitome of customization with Moon Mod Menu. Our features are meticulously crafted to offer an exceptional level of adaptability, empowering you to tailor the menu and its features precisely to your preferences.</h4>
+        </div>
+        
+        <div class="container2">
+            <h1>Stealth and Reliability</h1>
+            <h4>Experience the epitome of undetectability and reliability with our mod menu. Renowned for its stealth capabilities and minimal ban rates, our mod menu ensures a seamless and worry-free gaming experience.</h4>
+        </div>
+        
+        <div class="container2">
+            <h1>Trusted Legacy</h1>
+            <h4>With a legacy rooted in expertise, Moon Mod Menu stands as a trusted authority in the realm of mod menu development. Since our inception in 2021, we've continuously honed our craft, earning the trust of countless users.</h4>
+        </div>    
+
+        <div class="container2">
+            <h1>Plugin System</h1>
+            <h4>Unlock the potential of customization with our groundbreaking Plugin/Scripting System. Seamlessly integrate your own mods, craft bespoke bypasses, and enhance your menu with personalized features. Join our Discord server for more details and unleash your creativity today!</h4>
+        </div>
+    </div>
+    <!--
+    <h1>Media</h1>
+    <div class="container-wrapper">
+        <div class="container3">
+            <h1>Video by Scotty (OLD VERSION)</h1>
+            <iframe src="https://www.youtube.com/embed/koFNJSVDN7s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="container3">
+            <h1>Video by Outspect (OLD VERSION)</h1>
+            <iframe src="https://www.youtube.com/embed/cm7CE9o-mlI" frameborder="0" allowfullscreen></iframe>
+        </div>
+      
+        <div class="container3">
+            <h1>Video by Scotty (OLD VERSION)</h1>
+            <iframe src="https://www.youtube.com/embed/koFNJSVDN7s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="container3">
+            <h1>Video by Outspect (OLD VERSION)</h1>
+            <iframe src="https://www.youtube.com/embed/cm7CE9o-mlI" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    -->
+    
+    <div class="patch-notes">
+        <h2>Patch Notes</h2>
+        <div class="patch-table">
+        <table>
+            <tr>
+            <th>Date</th>
+            <th>Version</th>
+            <th>Changes</th>
+            </tr>
+            <tr>
+            <tr>
+            <td>November 8th</td>
+            <td>Latest</td>
+            <td>
+                <ul>
+                <li><span class="green-text">[+] </span>Moon is back, join the discord for more information.</li>
+                </ul>
+            </td>
+            </tr>
+        </table>
+    </div>
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+
+</body>
+
+</html>
